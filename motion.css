@@ -1,0 +1,161 @@
+/* =========================================================
+   MOTION LAYER - add AFTER style.css
+   <link rel="stylesheet" href="motion.css">
+========================================================= */
+
+/* 1. Scroll progress bar ---------------------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 4px;
+  width: 100%;
+  background: #111;
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 6000;
+}
+
+/* 2. Hero entrance (one orchestrated sequence on load) ----- */
+.hero-seq {
+  opacity: 0;
+  animation: heroIn 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: calc(0.15s + var(--s, 0) * 0.14s);
+}
+@keyframes heroIn {
+  from { opacity: 0; translate: 0 28px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+.profile-img.hero-seq {
+  animation:
+    imgIn 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s forwards,
+    float 3s ease-in-out 1.3s infinite;
+}
+@keyframes imgIn {
+  from { opacity: 0; scale: 0.88; rotate: -4deg; }
+  to   { opacity: 1; scale: 1; rotate: 0deg; }
+}
+
+/* tool icons pop in one after another */
+.tools-side img {
+  opacity: 0;
+  animation: pop 0.5s cubic-bezier(0.3, 1.5, 0.5, 1) forwards;
+}
+.tools-side img:nth-child(1) { animation-delay: 1.0s; }
+.tools-side img:nth-child(2) { animation-delay: 1.15s; }
+.tools-side img:nth-child(3) { animation-delay: 1.3s; }
+@keyframes pop {
+  from { opacity: 0; scale: 0.3; }
+  to   { opacity: 1; scale: 1; }
+}
+
+/* typed role line */
+.role-line {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 14px;
+  min-height: 1.6em;
+}
+.role-line .caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 3px;
+  vertical-align: -0.12em;
+  background: orange;
+  animation: blink 0.9s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* 3. Navbar drops in -------------------------------------- */
+.navbar { animation: navIn 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes navIn {
+  from { opacity: 0; translate: 0 -30px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+/* 4. Section headings draw an underline when revealed ------ */
+.hero h2 { position: relative; display: inline-block; }
+.hero h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  height: 4px; width: 100%;
+  border-radius: 4px;
+  background: orange;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s;
+}
+.fade-in.show h2::after { transform: scaleX(1); }
+.navbar h2::after { display: none; }
+
+/* 5. Project cards + skills: staggered wave ---------------- */
+.reveal { opacity: 0; }
+.reveal.in {
+  animation: revealUp 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--d, 0s);
+}
+@keyframes revealUp {
+  from { opacity: 0; translate: 0 36px; scale: 0.94; }
+  to   { opacity: 1; translate: 0 0; scale: 1; }
+}
+
+/* 6. Button ripple ----------------------------------------- */
+.btn { position: relative; overflow: hidden; }
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: scale(0);
+  animation: ripple 0.6s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes ripple { to { transform: scale(4); opacity: 0; } }
+
+/* 7. Lightbox + popup open (responds to a click) ----------- */
+.lightbox.open { animation: fadeIn 0.25s ease; }
+.lightbox.open .image-container { animation: zoomIn 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
+#lightbox-img.swap { animation: imgSwap 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomIn { from { opacity: 0; scale: 0.9; } to { opacity: 1; scale: 1; } }
+@keyframes imgSwap { from { opacity: 0; translate: 24px 0; } to { opacity: 1; translate: 0 0; } }
+
+/* 8. Reduced motion: switch it all off --------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .hero-seq, .tools-side img { opacity: 1; }
+  .scroll-progress { display: none; }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #111;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.logo img {
+  height: 150px;
+  width: auto;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+.logo:hover img {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .logo { font-size: 21px; }
+  .logo img { height: 36px; }
+}
