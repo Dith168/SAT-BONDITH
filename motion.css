@@ -159,3 +159,141 @@
   .logo { font-size: 21px; }
   .logo img { height: 36px; }
 }
+
+
+
+
+/* =========================================================
+   WATER NAVBAR - add AFTER style.css and motion.css
+   <link rel="stylesheet" href="water-nav.css">
+========================================================= */
+
+/* 1. Water-glass body */
+.navbar {
+  position: sticky;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.62) 0%,
+      rgba(200, 240, 255, 0.38) 50%,
+      rgba(255, 255, 255, 0.55) 100%);
+  backdrop-filter: blur(16px) saturate(1.7);
+  -webkit-backdrop-filter: blur(16px) saturate(1.7);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 10px 30px rgba(0, 90, 140, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -8px 18px rgba(120, 210, 255, 0.25);
+  padding-bottom: 24px;            /* room for the waves */
+}
+
+/* light that slowly sweeps across the glass */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 70%);
+  background-size: 250% 100%;
+  animation: lightSweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes lightSweep {
+  0%   { background-position: 130% 0; }
+  100% { background-position: -130% 0; }
+}
+
+/* 2. Two moving waves along the bottom edge */
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 20px;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10 Q100 0 200 10 T400 10 V20 H0 Z' fill='rgba(120,210,255,0.45)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 20' preserveAspectRatio='none'%3E%3Cpath d='M0 12 Q150 2 300 12 T600 12 V20 H0 Z' fill='rgba(255,255,255,0.55)'/%3E%3C/svg%3E");
+  background-size: 400px 20px, 600px 20px;
+  background-repeat: repeat-x;
+  background-position: 0 bottom, 0 bottom;
+  animation: waves 7s linear infinite;
+}
+@keyframes waves {
+  to { background-position: 400px bottom, -600px bottom; }
+}
+
+/* keep content above the water layers */
+.navbar > * { position: relative; z-index: 2; }
+
+/* 3. Liquid blob that slides between links */
+.navbar ul { position: relative; }
+.navbar ul li { position: relative; z-index: 1; }
+
+.navbar a.nav-link {
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: color 0.3s;
+}
+.navbar a.nav-link::after { display: none; }   /* remove old underline */
+.navbar a.nav-link:hover,
+.navbar a.nav-link.active { color: #0a5f8a; }
+
+.water-blob {
+  position: absolute;
+  z-index: 0;
+  left: 0; top: 0;
+  width: 0; height: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 45%),
+    linear-gradient(160deg, rgba(150, 225, 255, 0.75), rgba(60, 180, 240, 0.35));
+  box-shadow:
+    0 6px 14px rgba(40, 150, 220, 0.3),
+    inset 0 -3px 6px rgba(30, 140, 210, 0.25),
+    inset 0 2px 3px rgba(255, 255, 255, 0.9);
+  transition:
+    left 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    top 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    width 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+    height 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.water-blob.moving { animation: squish 0.55s ease; }
+@keyframes squish {
+  30%  { scale: 1.18 0.82; }
+  65%  { scale: 0.94 1.08; }
+  100% { scale: 1 1; }
+}
+
+/* 4. Click ripples on the water */
+.water-ripple {
+  position: absolute;
+  z-index: 1;
+  width: 20px; height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 10px rgba(100, 200, 255, 0.6);
+  pointer-events: none;
+  animation: waterRipple 1s ease-out forwards;
+}
+.water-ripple:nth-of-type(2n) { animation-delay: 0.12s; }
+@keyframes waterRipple {
+  from { transform: scale(0.3); opacity: 1; }
+  to   { transform: scale(16);  opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding-bottom: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar::before, .navbar::after, .water-blob.moving { animation: none !important; }
+  .water-blob { transition: none; }
+}
