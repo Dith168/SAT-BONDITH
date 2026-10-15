@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap");
+
 /* =========================================================
    GLOBAL
 ========================================================= */
@@ -16,19 +18,10 @@ html {
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-
-  background: linear-gradient(
-    90deg,
-    #ff7b00,
-    #ff9500,
-    #ffb700,
-    #ffd60a,
-    #ff7b00
-  );
-
-  background-size: 300% 100%;
-  animation: backgroundMove 12s ease infinite;
-
+  background:
+    radial-gradient(ellipse at top, #162033 0%, #0a0e17 60%);
+  background-color: #0a0e17;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -75,28 +68,17 @@ p {
 ========================================================= */
 
 .navbar {
-  background: rgba(120, 210, 255,);
-
   border-radius: 20px;
-
   padding: 15px 30px;
-
   margin-top: 20px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   position: sticky;
   top: 0px;
-
   z-index: 1000;
-
   flex-wrap: wrap;
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.08);
-
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
 }
 
@@ -108,43 +90,29 @@ p {
 
 .navbar ul {
   display: flex;
-
   gap: 20px;
-
   list-style: none;
-
   padding: 24px;
   margin: 0;
 }
 
 .navbar a {
   text-decoration: none;
-
   color: #111;
-
   position: relative;
-
   padding: 5px 0;
-
   font-weight: 500;
-
   transition: 0.3s;
 }
 
 .navbar a::after {
   content: "";
-
   position: absolute;
-
   bottom: 0;
   left: 0;
-
   height: 2px;
-
   width: 0%;
-
   background: orange;
-
   transition: 0.3s;
 }
 
@@ -172,49 +140,35 @@ p {
 
 .btn {
   display: inline-block;
-
   padding: 11px 20px;
-
   border-radius: 20px;
-
   cursor: pointer;
-
   transition: 0.3s;
-
   border: none;
-
   font-size: 15px;
-
   text-decoration: none;
 }
 
 .btn-primary {
   background: orange;
   color: white;
-
-  box-shadow:
-    0 5px 15px rgba(255, 165, 0, 0.25);
+  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-
-  box-shadow:
-    0 8px 20px rgba(255, 165, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(255, 165, 0, 0.35);
 }
 
 .btn-outline {
   border: 2px solid orange;
-
   background: transparent;
-
   color: #222;
 }
 
 .btn-outline:hover {
   background: orange;
   color: white;
-
   transform: translateY(-3px);
 }
 
@@ -225,15 +179,10 @@ p {
 
 .hero {
   background: rgba(255, 255, 255, 0.97);
-
   margin-top: 20px;
-
   padding: 40px;
-
   border-radius: 20px;
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -243,35 +192,26 @@ p {
 
 #home {
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   gap: 40px;
-
   flex-wrap: wrap;
-
   min-height: 500px;
 }
 
 #home .left {
   flex: 1;
-
   min-width: 280px;
 }
 
 #home .left p {
   max-width: 600px;
-
   margin-bottom: 25px;
 }
 
 .buttons {
   display: flex;
-
   gap: 12px;
-
   flex-wrap: wrap;
 }
 
@@ -282,48 +222,32 @@ p {
 
 .profile-area {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 15px;
-
   flex: 0 0 auto;
 }
 
 .profile-img {
   width: 100%;
-
   max-width: 250px;
-
   display: block;
-
   border-radius: 20px;
-
   object-fit: cover;
-
   animation: float 3s ease-in-out infinite;
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .tools-side {
   display: flex;
-
   flex-direction: column;
-
   gap: 12px;
 }
 
 .tools-side img {
   width: 55px;
-
   height: 55px;
-
   object-fit: contain;
-
   transition: 0.3s;
 }
 
@@ -357,31 +281,22 @@ p {
 
 .skills {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 10px;
 }
 
 .skill {
   background: #f5f5f5;
-
   padding: 9px 15px;
-
   border-radius: 10px;
-
   transition: 0.3s;
-
   cursor: default;
-
   font-size: 14px;
 }
 
 .skill:hover {
   background: #ffa500;
-
   color: white;
-
   transform: translateY(-3px);
 }
 
@@ -392,28 +307,18 @@ p {
 
 .projects {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(160px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 18px;
-
   margin-bottom: 30px;
 }
 
 .project-item {
   background: white;
-
   border-radius: 10px;
-
   overflow: hidden;
-
   transition: 0.3s;
-
   text-align: center;
-
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgb(255, 255, 255);
 }
 
 .project-item img {
@@ -428,27 +333,20 @@ p {
 
 .project-item img:hover {
   transform: scale(1.04);
-
   filter: brightness(1.05);
 }
 
 .project-item:hover {
   transform: translateY(-7px);
-
-  box-shadow:
-    0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px rgb(255, 254, 254);
 }
 
 .project-item p {
   margin: 0;
-
   padding: 12px 5px;
-
   font-size: 14px;
-
   font-weight: 600;
-
-  color: #333;
+  color: #ffffff;
 }
 
 
@@ -458,48 +356,35 @@ p {
 
 .contact-form {
   max-width: 700px;
-
   margin: auto;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-
   margin: 10px 0;
-
   padding: 13px;
-
   border-radius: 10px;
-
   border: 1px solid #ccc;
-
   font-family: inherit;
-
   font-size: 15px;
-
   outline: none;
-
   transition: 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: orange;
-
-  box-shadow:
-    0 0 0 3px rgba(255, 165, 0, 0.12);
+  box-shadow: 0 0 0 3px rgba(255, 254, 253, 0.995);
 }
 
 .contact-form textarea {
   min-height: 140px;
-
   resize: vertical;
 }
 
 .contact-form button:disabled {
   opacity: 0.6;
-
   cursor: not-allowed;
 }
 
@@ -510,9 +395,7 @@ p {
 
 .fade-in {
   opacity: 0;
-
   transform: translateY(30px);
-
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
@@ -520,7 +403,6 @@ p {
 
 .fade-in.show {
   opacity: 1;
-
   transform: translateY(0);
 }
 
@@ -530,19 +412,9 @@ p {
 ========================================================= */
 
 @keyframes float {
-
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
 }
 
 
@@ -559,29 +431,16 @@ p {
     #ff9f1c,
     #ff6b00
   );
-
   background-size: 300% auto;
-
   background-clip: text;
-
   -webkit-background-clip: text;
-
   -webkit-text-fill-color: transparent;
-
-  animation:
-    gradientMove 4s linear infinite;
+  animation: gradientMove 4s linear infinite;
 }
 
 @keyframes gradientMove {
-
-  0% {
-    background-position: 0% center;
-  }
-
-  100% {
-    background-position: 300% center;
-  }
-
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
 }
 
 
@@ -591,103 +450,68 @@ p {
 
 .popup {
   position: fixed;
-
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   background: rgba(0, 0, 0, 0.6);
-
   display: none;
-
   justify-content: center;
-
   align-items: center;
-
   z-index: 5000;
-
   padding: 20px;
 }
 
 .popup-content {
   background: white;
-
   padding: 35px;
-
   border-radius: 20px;
-
   text-align: center;
-
   min-width: 280px;
-
   max-width: 400px;
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.25);
-
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   animation: popupIn 0.3s ease;
 }
 
 .popup-content h3 {
   margin-top: 0;
-
   margin-bottom: 20px;
 }
 
 .popup-content a {
   display: block;
-
   margin: 12px 0;
-
   padding: 10px;
-
   text-decoration: none;
-
   color: #222;
-
   border-radius: 10px;
-
   transition: 0.3s;
 }
 
 .popup-content a:hover {
   color: white;
-
   background: orange;
 }
 
 .popup-content button {
   margin-top: 10px;
-
   padding: 9px 20px;
-
   border: none;
-
   border-radius: 10px;
-
   background: #222;
-
   color: white;
-
   cursor: pointer;
 }
 
 @keyframes popupIn {
-
   from {
     opacity: 0;
-
     transform: scale(0.85);
   }
-
   to {
     opacity: 1;
-
     transform: scale(1);
   }
-
 }
 
 
@@ -697,35 +521,22 @@ p {
 
 .lightbox {
   display: none;
-
   position: fixed;
-
   z-index: 9999;
-
   inset: 0;
-
   background: rgba(0, 0, 0, 0.95);
-
   justify-content: center;
-
   align-items: center;
-
   overflow: hidden;
 }
 
 .image-container {
   width: 85vw;
-
   height: 85vh;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   overflow: hidden;
-
   cursor: grab;
 }
 
@@ -735,21 +546,13 @@ p {
 
 #lightbox-img {
   max-width: 85vw;
-
   max-height: 85vh;
-
   object-fit: contain;
-
   border-radius: 12px;
-
   user-select: none;
-
   -webkit-user-drag: none;
-
   transform-origin: center center;
-
   will-change: transform;
-
   transition: transform 0.12s ease;
 }
 
@@ -758,23 +561,14 @@ p {
 
 .close-lightbox {
   position: absolute;
-
   top: 20px;
-
   right: 30px;
-
   color: white;
-
   background: transparent;
-
   border: none;
-
   font-size: 45px;
-
   cursor: pointer;
-
   line-height: 1;
-
   z-index: 10;
 }
 
@@ -788,27 +582,16 @@ p {
 .prev-btn,
 .next-btn {
   position: absolute;
-
   top: 50%;
-
   transform: translateY(-50%);
-
   background: rgba(255, 255, 255, 0.15);
-
   border: none;
-
   color: white;
-
   font-size: 35px;
-
   padding: 15px 20px;
-
   cursor: pointer;
-
   border-radius: 10px;
-
   z-index: 10;
-
   transition: 0.3s;
 }
 
@@ -830,37 +613,25 @@ p {
 
 .zoom-controls {
   position: absolute;
-
   bottom: 25px;
-
   display: flex;
-
   gap: 10px;
-
   z-index: 10;
 }
 
 .zoom-controls button {
   padding: 10px 16px;
-
   border: none;
-
   border-radius: 8px;
-
   cursor: pointer;
-
   font-size: 16px;
-
   background: white;
-
   color: #222;
-
   transition: 0.3s;
 }
 
 .zoom-controls button:hover {
   background: orange;
-
   color: white;
 }
 
@@ -871,35 +642,12 @@ p {
 
 footer {
   text-align: center;
-
   padding: 25px;
-
-  color: white;
+  color: #cbd5e1;
 }
 
 footer p {
-  color: white;
-}
-
-
-/* =========================================================
-   BACKGROUND ANIMATION
-========================================================= */
-
-@keyframes backgroundMove {
-
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-
+  color: #cbd5e1;
 }
 
 
@@ -915,17 +663,13 @@ footer p {
 
   .navbar {
     flex-direction: column;
-
     gap: 15px;
-
     padding: 18px;
   }
 
   .navbar ul {
     gap: 12px;
-
     flex-wrap: wrap;
-
     justify-content: center;
   }
 
@@ -935,15 +679,12 @@ footer p {
 
   #home {
     flex-direction: column;
-
     text-align: center;
-
     padding: 30px 20px;
   }
 
   #home .left p {
     margin-left: auto;
-
     margin-right: auto;
   }
 
@@ -968,8 +709,7 @@ footer p {
   }
 
   .projects {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .project-item img {
@@ -979,7 +719,6 @@ footer p {
   .prev-btn,
   .next-btn {
     font-size: 25px;
-
     padding: 10px 14px;
   }
 
@@ -1030,9 +769,7 @@ footer p {
 
   #home {
     min-height: auto;
-
     padding-top: 35px;
-
     padding-bottom: 35px;
   }
 
@@ -1042,14 +779,11 @@ footer p {
 
   .tools-side img {
     width: 45px;
-
     height: 45px;
   }
 
   .projects {
-    grid-template-columns:
-      repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
 
@@ -1059,40 +793,33 @@ footer p {
 
   .project-item p {
     font-size: 12px;
-
     padding: 9px 3px;
   }
 
   .skill {
     font-size: 12px;
-
     padding: 8px 10px;
   }
 
   .image-container {
     width: 92vw;
-
     height: 78vh;
   }
 
   #lightbox-img {
     max-width: 92vw;
-
     max-height: 78vh;
   }
 
   .close-lightbox {
     top: 15px;
-
     right: 15px;
-
     font-size: 38px;
   }
 
   .prev-btn,
   .next-btn {
     font-size: 20px;
-
     padding: 8px 11px;
   }
 
@@ -1102,7 +829,6 @@ footer p {
 
   .zoom-controls button {
     padding: 8px 11px;
-
     font-size: 13px;
   }
 
@@ -1111,11 +837,10 @@ footer p {
 
 
 /* =========================================================
-   MOTION LAYER - add AFTER style.css
-   <link rel="stylesheet" href="motion.css">
+   MOTION LAYER
 ========================================================= */
 
-/* 1. Scroll progress bar ---------------------------------- */
+/* 1. Scroll progress bar */
 .scroll-progress {
   position: fixed;
   top: 0; left: 0;
@@ -1127,7 +852,7 @@ footer p {
   z-index: 6000;
 }
 
-/* 2. Hero entrance (one orchestrated sequence on load) ----- */
+/* 2. Hero entrance (one orchestrated sequence on load) */
 .hero-seq {
   opacity: 0;
   animation: heroIn 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
@@ -1180,14 +905,14 @@ footer p {
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* 3. Navbar drops in -------------------------------------- */
+/* 3. Navbar drops in */
 .navbar { animation: navIn 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
 @keyframes navIn {
   from { opacity: 0; translate: 0 -30px; }
   to   { opacity: 1; translate: 0 0; }
 }
 
-/* 4. Section headings draw an underline when revealed ------ */
+/* 4. Section headings draw an underline when revealed */
 .hero h2 { position: relative; display: inline-block; }
 .hero h2::after {
   content: "";
@@ -1203,7 +928,7 @@ footer p {
 .fade-in.show h2::after { transform: scaleX(1); }
 .navbar h2::after { display: none; }
 
-/* 5. Project cards + skills: staggered wave ---------------- */
+/* 5. Project cards + skills: staggered wave */
 .reveal { opacity: 0; }
 .reveal.in {
   animation: revealUp 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
@@ -1214,7 +939,7 @@ footer p {
   to   { opacity: 1; translate: 0 0; scale: 1; }
 }
 
-/* 6. Button ripple ----------------------------------------- */
+/* 6. Button ripple */
 .btn { position: relative; overflow: hidden; }
 .ripple {
   position: absolute;
@@ -1226,7 +951,7 @@ footer p {
 }
 @keyframes ripple { to { transform: scale(4); opacity: 0; } }
 
-/* 7. Lightbox + popup open (responds to a click) ----------- */
+/* 7. Lightbox + popup open */
 .lightbox.open { animation: fadeIn 0.25s ease; }
 .lightbox.open .image-container { animation: zoomIn 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
 #lightbox-img.swap { animation: imgSwap 0.3s ease; }
@@ -1234,7 +959,7 @@ footer p {
 @keyframes zoomIn { from { opacity: 0; scale: 0.9; } to { opacity: 1; scale: 1; } }
 @keyframes imgSwap { from { opacity: 0; translate: 24px 0; } to { opacity: 1; translate: 0 0; } }
 
-/* 8. Reduced motion: switch it all off --------------------- */
+/* 8. Reduced motion: switch it all off */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -1257,7 +982,7 @@ footer p {
 }
 
 .logo img {
-  height: 150px;
+  height: 48px;
   width: auto;
   display: block;
   transition: transform 0.4s cubic-bezier(0.3, 1.5, 0.5, 1);
@@ -1276,8 +1001,7 @@ footer p {
 
 
 /* =========================================================
-   WATER NAVBAR - add AFTER style.css and motion.css
-   <link rel="stylesheet" href="water-nav.css">
+   WATER NAVBAR
 ========================================================= */
 
 /* 1. Water-glass body */
@@ -1421,96 +1145,51 @@ footer p {
 
 .pdf-project-preview {
   position: relative;
-
   height: 300px;
-
   border-radius: 20px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #080808,
-      #222
-    );
-
-  border: 1px solid rgba(
-    212,
-    175,
-    55,
-    0.6
-  );
-
+  background: linear-gradient(135deg, #080808, #222);
+  border: 1px solid rgba(212, 175, 55, 0.6);
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
   overflow: hidden;
-
   transition: 0.4s ease;
 }
 
-.pdf-project-card:hover
-.pdf-project-preview {
-
+.pdf-project-card:hover .pdf-project-preview {
   transform: translateY(-8px);
-
   border-color: #d4af37;
-
-  box-shadow:
-    0 15px 40px
-    rgba(212, 175, 55, 0.2);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
 }
 
 .pdf-icon {
   font-size: 70px;
-
   margin-bottom: 15px;
 }
 
 .pdf-label {
   color: #d4af37;
-
   font-size: 24px;
-
   font-weight: 700;
-
   letter-spacing: 4px;
 }
 
-.pdf-project-preview
-.project-overlay {
-
+.pdf-project-preview .project-overlay {
   position: absolute;
-
   inset: 0;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  background:
-    rgba(0, 0, 0, 0.75);
-
+  background: rgba(0, 0, 0, 0.75);
   color: #d4af37;
-
   font-size: 18px;
-
   font-weight: 600;
-
   opacity: 0;
-
   transition: 0.4s ease;
 }
 
-.pdf-project-card:hover
-.project-overlay {
-
+.pdf-project-card:hover .project-overlay {
   opacity: 1;
 }
 
@@ -1520,133 +1199,80 @@ footer p {
 ========================================================= */
 
 .pdf-viewer {
-
   position: fixed;
-
   inset: 0;
-
   z-index: 99999;
-
   background: #050505;
-
   display: none;
-
   flex-direction: column;
 }
 
 .pdf-viewer.active {
-
   display: flex;
 }
 
-
 .pdf-viewer-header {
-
   min-height: 70px;
-
-  padding:
-    12px 25px;
-
+  padding: 12px 25px;
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 20px;
-
   background: #080808;
-
-  border-bottom:
-    1px solid #d4af37;
+  border-bottom: 1px solid #d4af37;
 }
 
 .pdf-viewer-header h3 {
-
   margin: 0;
-
   color: #d4af37;
 }
 
 .pdf-viewer-header span {
-
   color: #aaa;
-
   font-size: 13px;
 }
 
-
 .pdf-actions {
-
   display: flex;
-
   align-items: center;
-
   gap: 12px;
 }
 
-
 .pdf-download {
-
-  padding:
-    10px 18px;
-
+  padding: 10px 18px;
   border-radius: 8px;
-
   background: #d4af37;
-
   color: #000;
-
   text-decoration: none;
-
   font-weight: 600;
-
   transition: 0.3s;
 }
 
 .pdf-download:hover {
-
   background: #fff;
 }
 
-
 .pdf-close {
-
   width: 42px;
-
   height: 42px;
-
   border: none;
-
   border-radius: 8px;
-
   background: #222;
-
   color: #fff;
-
   font-size: 20px;
-
   cursor: pointer;
-
   transition: 0.3s;
 }
 
 .pdf-close:hover {
-
   background: #d4af37;
-
   color: #000;
 }
 
-
 .pdf-viewer iframe {
-
   flex: 1;
-
   width: 100%;
-
   border: none;
-
   background: #fff;
 }
 
@@ -1656,33 +1282,229 @@ footer p {
 @media (max-width: 600px) {
 
   .pdf-viewer-header {
-
     padding: 10px 12px;
-
   }
 
   .pdf-viewer-header h3 {
-
     font-size: 15px;
-
   }
 
   .pdf-viewer-header span {
-
     font-size: 11px;
-
   }
 
   .pdf-download {
-
-    padding:
-      8px 10px;
-
+    padding: 8px 10px;
     font-size: 12px;
-
   }
 
 }
 
 
+/* =========================================================
+   PROFESSIONAL DARK THEME (overrides - keep at the END)
+========================================================= */
 
+h1, h2, h3 {
+  color: #f1f5f9;
+}
+
+p {
+  color: #a8b3c4;
+}
+
+/* Cards */
+.hero {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Navbar (dark glass) */
+.navbar {
+  background:
+    linear-gradient(135deg,
+      rgba(30, 41, 59, 0.80) 0%,
+      rgba(15, 23, 42, 0.70) 50%,
+      rgba(30, 41, 59, 0.80) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.navbar::before {
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 70%);
+  background-size: 250% 100%;
+}
+
+.navbar::after {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10 Q100 0 200 10 T400 10 V20 H0 Z' fill='rgba(255,165,0,0.20)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 20' preserveAspectRatio='none'%3E%3Cpath d='M0 12 Q150 2 300 12 T600 12 V20 H0 Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
+}
+
+.navbar a,
+.logo {
+  color: #e2e8f0;
+}
+
+.navbar a:hover,
+.navbar a.active,
+.navbar a.nav-link:hover,
+.navbar a.nav-link.active {
+  color: #fbb931;
+}
+
+.water-blob {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 45%),
+    linear-gradient(160deg, rgba(255, 165, 0, 0.35), rgba(234, 97, 19, 0.20));
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.25);
+}
+
+.water-ripple {
+  border-color: rgba(255, 165, 0, 0.8);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+}
+
+/* Buttons */
+.btn-outline {
+  color: #e2e8f0;
+}
+
+/* Hero text */
+.role-line {
+  color: #e2e8f0;
+}
+
+.scroll-progress {
+  background: orange;
+}
+
+/* Skills */
+.skill {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.skill:hover {
+  background: #ffa500;
+  color: #fff;
+}
+
+/* Projects (white boxes) */
+.project-item {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.project-item img {
+  background: #ffffff;
+}
+
+.project-item p {
+  color: #111827;   /* dark text so it's readable on white */
+}
+
+.project-item:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Contact form */
+.contact-form input,
+.contact-form textarea {
+  background: #0f172a;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #64748b;
+}
+
+/* Popup */
+.popup-content {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.popup-content a {
+  color: #e2e8f0;
+}
+
+.popup-content button {
+  background: #334155;
+}
+
+/* Footer */
+footer,
+footer p {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   NAME ONLY (Bondith Sat): FONT AND SIZE
+   Does not affect "Hi, I'm"
+========================================================= */
+
+.animated-name span {
+  font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+  .animated-name span {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-name span {
+    font-size: 34px;
+  }
+}
+
+
+/* =========================================================
+   SNAKE AROUND THE PROFILE PHOTO
+   Change the snake color: edit #166534 (tail) and #22c55e (head)
+========================================================= */
+
+@property --snake-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.profile-area {
+  animation: snakeCircle 4s linear infinite;
+}
+
+@keyframes snakeCircle {
+  to { --snake-angle: 360deg; }
+}
+
+.profile-img {
+  border: 6px solid transparent;
+  background:
+    conic-gradient(
+      from var(--snake-angle),
+      transparent 0%,
+      transparent 40%,
+      #655516 40%,
+      #c56622 62%,
+      transparent 62%
+    ) border-box;
+}
