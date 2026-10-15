@@ -215,11 +215,78 @@ if (form) {
    LIGHTBOX GALLERY
 ========================================================= */
 
-const galleryImages =
-  document.querySelectorAll(
-    ".project-item img"
+let galleryImages = Array.from(
+  document.querySelectorAll(".project-item img")
+);
+
+const klassyMenuGallery = [
+  {
+    src: "pic/coverwatch.jpg",
+    alt: "Front Cover"
+  },
+  {
+    src: "pic/backwatch.jpg",
+    alt: "Back Cover Menu"
+  },
+  {
+    src: "pic/watch2.jpg",
+    alt: "Inside Page"
+  },
+  {
+    src: "pic/watch3.jpg",
+    alt: "Page 3"
+  },
+  {
+    src: "pic/watch4.jpg",
+    alt: "Page 4"
+  },
+  {
+    src: "pic/watch5.jpg",
+    alt: "Page 5"
+  },
+  {
+    src: "pic/watch6.jpg",
+    alt: "Page 6"
+  },
+  {
+    src: "pic/watch7.jpg",
+    alt: "Page 7"
+  },
+  {
+    src: "pic/watch8.jpg",
+    alt: "Page 8"
+  },
+  {
+    src: "pic/watch9.jpg",
+    alt: "Page 9"
+  },
+  {
+    src: "pic/watch10.jpg",
+    alt: "Page 10"
+  },
+  {
+    src: "pic/watch11.jpg",
+    alt: "Page 11"
+  }
+];
+
+
+const klassyMenuCard =
+  document.querySelector(
+    '[data-project="klassy-menu"]'
   );
 
+if (klassyMenuCard) {
+  klassyMenuCard.addEventListener("click", () => {
+    galleryImages = klassyMenuGallery;
+    currentIndex = 0;
+
+    showImage();
+
+    lightbox.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  });
+}
 const lightbox =
   document.getElementById("lightbox");
 
@@ -303,25 +370,21 @@ function resetZoom() {
 ========================================================= */
 
 function showImage() {
-
-  if (
-    !galleryImages.length ||
-    !lightboxImg
-  ) {
+  if (!galleryImages.length || !lightboxImg) {
     return;
   }
 
-  const image =
-    galleryImages[currentIndex];
+  const image = galleryImages[currentIndex];
 
-  lightboxImg.src =
-    image.getAttribute("src");
-
-  lightboxImg.alt =
-    image.getAttribute("alt") || "";
+  if (typeof image === "object" && image.src) {
+    lightboxImg.src = image.src;
+    lightboxImg.alt = image.alt || "";
+  } else {
+    lightboxImg.src = image.getAttribute("src");
+    lightboxImg.alt = image.getAttribute("alt") || "";
+  }
 
   resetZoom();
-
 }
 
 
