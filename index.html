@@ -223,7 +223,22 @@
   <p>⌚ Klassy Watches — Menu / Booklet Design</p>
   <small>Front Cover + Back Cover + Pages 2–11</small>
 </div>
+<div class="project-item pdf-project-card">
+  <div class="pdf-project-preview">
+    <div class="pdf-icon">📖</div>
 
+    <div class="pdf-label">
+      BOOKLET
+    </div>
+
+    <div class="project-overlay">
+      <span>View Booklet →</span>
+    </div>
+  </div>
+
+  <p>📖 SW2 Book Project</p>
+  <small>Booklet Design · 31 Pages</small>
+</div>
             <div class="project-item">
               <img src="pic/Menu.jpg" alt="Cover Menu Design" />
               <p>Cover Menu Design</p>
@@ -445,6 +460,42 @@
 
 
     <link rel="stylesheet" href="style.css">
-    
+    <div id="pdfViewer" class="pdf-viewer">
+
+  <div class="pdf-viewer-header">
+
+    <div>
+      <h3>📖 SW2 Book Project</h3>
+      <span>Booklet Design · 31 Pages</span>
+    </div>
+
+    <div class="pdf-actions">
+
+      <a
+        href="pic/SW2-Book-Project.pdf"
+        download
+        class="pdf-download"
+      >
+        ↓ Download PDF
+      </a>
+
+      <button
+        type="button"
+        onclick="closePDF()"
+        class="pdf-close"
+      >
+        ✕
+      </button>
+
+    </div>
+
+  </div>
+
+  <iframe
+    src="pic/SW2-Book-Project.pdf"
+    title="SW2 Book Project"
+  ></iframe>
+
+</div>
   </body>
 </html>

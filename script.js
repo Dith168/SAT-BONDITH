@@ -1142,3 +1142,36 @@ function handleSwipe() {
   });
 })();
 
+/* =========================================================
+   PDF BOOKLET PROJECT
+========================================================= */
+
+const pdfProject =
+  document.querySelector(".pdf-project-card");
+
+const pdfViewer =
+  document.getElementById("pdfViewer");
+
+
+if (pdfProject && pdfViewer) {
+
+  pdfProject.addEventListener("click", () => {
+
+    pdfViewer.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+  });
+
+}
+
+
+function closePDF() {
+
+  if (!pdfViewer) return;
+
+  pdfViewer.classList.remove("active");
+
+  document.body.style.overflow = "";
+
+}
